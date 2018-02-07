@@ -162,12 +162,19 @@
                 src="https://s3-us-west-2.amazonaws.com/ai2-vision-animation-gan/annotation_data/scene_gifs/{{image_id}}.gif"
              width="300">
       </div>
+
+      <div>
+        {{ent_button_js| safe}}
+      </div>
+      <div>
+        {{verb_button_js| safe}}
+      </div>
       <br>
         <div class='col-lg-4 text-center'>
           {% include 'simpleamt.html' %}
          </div>
   </div>
-      {{button_js| safe}}
+
     <script>
       function not_in_descriptions(word){
         return descriptions.indexOf(word) == -1;
@@ -178,7 +185,7 @@
           document.getElementById(clicked_word).style.backgroundColor = '#ff00dd';
           }
         else {
-            document.getElementById(clicked_word).style.backgroundColor = '#C0C0C0';
+            document.getElementById(clicked_word).style.backgroundColor = '#FFFF4C';
             var index = descriptions.indexOf(clicked_word);
             descriptions.splice(index, 1);
           }
@@ -236,5 +243,8 @@
         main();
     </script>
   </div>
+    <h3>These are characters you will see frequently mentioned: </h3>
+    <img id="mains_1" src="https://s3-us-west-2.amazonaws.com/ai2-vision-animation-gan/annotation_data/interface_elems/mc_row1.png">
+    <img id="mains_2" src="https://s3-us-west-2.amazonaws.com/ai2-vision-animation-gan/annotation_data/interface_elems/mc_row2.png">
   </body>
 </html>
