@@ -70,8 +70,31 @@
   </head>
   <body>
     <div class='container'>
-      <htitle>Find errors in the video</htitle><br>
-      <htitlesm>1. Two questions are asked about the contents of the video. </htitlesm><br>
+      <htitle>Find issues in the video shown</htitle><br>
+      <htitlesm>The task is to identify common problems we expect to see in our animations. You should
+        click on the button for each of the issues you see.</htitlesm><br>
+      <br>
+      <htitlesm>1. Floating characters or objects: they are floating above the ground not supported by
+        anything</htitlesm><br>
+      <htitlesm>2. Inconsistent scale: some characters or objects are much larger or smaller than they should be
+        relative to the scene.
+      </htitlesm><br>
+      <htitlesm>3. Characters or objects positioned incorrectly: they are placed in a way that is
+        incorrect/nonsensical but could be fixed by sliding them to a new position.
+      </htitlesm><br>
+      <htitlesm>4. Character pose is wrong: they are sitting without a chair, standing when they should
+        be walking.</htitlesm><br>
+      <htitlesm>5. Background motion inconsistent with characters: they are walking or driving in place, but
+        background doesn't move or moves backwards</htitlesm><br>
+      <htitlesm>6. Excessive flickering: large parts of characters or objects blink in and out (a little
+        bit is ok)</htitlesm><br>
+      <htitlesm>7. Halo of background around character or object: they are surrounded by a different
+        background that doesn't match the rest of the scene (A little bit is ok).</htitlesm><br>
+      <htitlesm>8. Characters duplicated: the same character appears twice.</htitlesm><br>
+      <br>
+        <htitlesm>Videos can have more than one issue.</htitlesm><br>
+        <htitlesm>They can also have none: if everything looks ok, select No Issues</htitlesm><br>
+        <htitlesm>You can see examples at any time by clicking the Show/Hide examples button.</htitlesm><br>
 
     <br>
     <header>Examples</header>
@@ -133,7 +156,7 @@
           </td>
           <td>
             <div id="gifs8" style="display:none">
-              <img src="https://s3-us-west-2.amazonaws.com/ai2-vision-animation-gan/annotation_data/generated_gifs/s_06_e_22_shot_000801_000875.gif" width="300">
+              <img src="https://s3-us-west-2.amazonaws.com/ai2-vision-animation-gan/annotation_data/generated_gifs/s_06_e_21_shot_001133_001207.gif" width="300">
               <img
                       src="https://s3-us-west-2.amazonaws.com/ai2-vision-animation-gan/annotation_data/interface_elems/qual_metrics/ex12.png">
             </div>
@@ -321,7 +344,7 @@
           simpleamt.setupSubmit();
           $('#submit-btn').click(function() {
             if (results.length < 1) {
-              alert('Make sure to mark the objects, or select NO OBJECTS if there are none');
+              alert('Make sure to mark the issues, or select No Issues if there are none');
               return false;
             }
             var output = {'globalID': input[0], 'results': results}
